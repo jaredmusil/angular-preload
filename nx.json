@@ -28,6 +28,15 @@
     "pet-store-e2e": {
       "tags": [],
       "implicitDependencies": ["pet-store"]
+    },
+    "cart": {
+      "tags": []
+    },
+    "pets": {
+      "tags": []
+    },
+    "api": {
+      "tags": []
     }
   }
 }

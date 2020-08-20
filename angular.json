@@ -119,6 +119,117 @@
           }
         }
       }
+    },
+    "cart": {
+      "projectType": "library",
+      "root": "libs/cart",
+      "sourceRoot": "libs/cart/src",
+      "prefix": "angular-preload",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/cart/tsconfig.lib.json",
+              "libs/cart/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/cart/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/cart/jest.config.js",
+            "tsConfig": "libs/cart/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/cart/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "pets": {
+      "projectType": "library",
+      "root": "libs/pets",
+      "sourceRoot": "libs/pets/src",
+      "prefix": "angular-preload",
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/pets/tsconfig.lib.json",
+              "libs/pets/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/pets/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/pets/jest.config.js",
+            "tsConfig": "libs/pets/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "libs/pets/src/test-setup.ts"
+          }
+        }
+      },
+      "schematics": {}
+    },
+    "api": {
+      "root": "apps/api",
+      "sourceRoot": "apps/api/src",
+      "projectType": "application",
+      "prefix": "api",
+      "schematics": {},
+      "architect": {
+        "build": {
+          "builder": "@nrwl/node:build",
+          "options": {
+            "outputPath": "dist/apps/api",
+            "main": "apps/api/src/main.ts",
+            "tsConfig": "apps/api/tsconfig.app.json",
+            "assets": ["apps/api/src/assets"]
+          },
+          "configurations": {
+            "production": {
+              "optimization": true,
+              "extractLicenses": true,
+              "inspect": false,
+              "fileReplacements": [
+                {
+                  "replace": "apps/api/src/environments/environment.ts",
+                  "with": "apps/api/src/environments/environment.prod.ts"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@nrwl/node:execute",
+          "options": {
+            "buildTarget": "api:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/api/tsconfig.app.json",
+              "apps/api/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/api/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/api/jest.config.js",
+            "tsConfig": "apps/api/tsconfig.spec.json",
+            "passWithNoTests": true
+          }
+        }
+      }
     }
   },
   "cli": {
