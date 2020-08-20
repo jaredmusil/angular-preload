@@ -1,0 +1,171 @@
+{
+  "version": 1,
+  "projects": {
+    "pet-store": {
+      "projectType": "application",
+      "schematics": {},
+      "root": "apps/pet-store",
+      "sourceRoot": "apps/pet-store/src",
+      "prefix": "angular-preload",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/pet-store",
+            "index": "apps/pet-store/src/index.html",
+            "main": "apps/pet-store/src/main.ts",
+            "polyfills": "apps/pet-store/src/polyfills.ts",
+            "tsConfig": "apps/pet-store/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/pet-store/src/favicon.ico",
+              "apps/pet-store/src/assets"
+            ],
+            "styles": ["apps/pet-store/src/styles.css"],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/pet-store/src/environments/environment.ts",
+                  "with": "apps/pet-store/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "pet-store:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "pet-store:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "pet-store:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/pet-store/tsconfig.app.json",
+              "apps/pet-store/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!apps/pet-store/**/*"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/pet-store/jest.config.js",
+            "tsConfig": "apps/pet-store/tsconfig.spec.json",
+            "passWithNoTests": true,
+            "setupFile": "apps/pet-store/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "pet-store-e2e": {
+      "root": "apps/pet-store-e2e",
+      "sourceRoot": "apps/pet-store-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/pet-store-e2e/cypress.json",
+            "tsConfig": "apps/pet-store-e2e/tsconfig.e2e.json",
+            "devServerTarget": "pet-store:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "pet-store:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": ["apps/pet-store-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/pet-store-e2e/**/*"]
+          }
+        }
+      }
+    }
+  },
+  "cli": {
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/workspace": {
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/cypress": {
+      "cypress-project": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/node": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/nest": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/express": {
+      "application": {
+        "linter": "tslint"
+      },
+      "library": {
+        "linter": "tslint"
+      }
+    },
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "pet-store"
+}
