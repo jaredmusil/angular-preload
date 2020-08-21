@@ -120,29 +120,29 @@
         }
       }
     },
-    "cart": {
+    "data": {
       "projectType": "library",
-      "root": "libs/cart",
-      "sourceRoot": "libs/cart/src",
+      "root": "libs/data",
+      "sourceRoot": "libs/data/src",
       "prefix": "angular-preload",
       "architect": {
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
             "tsConfig": [
-              "libs/cart/tsconfig.lib.json",
-              "libs/cart/tsconfig.spec.json"
+              "libs/data/tsconfig.lib.json",
+              "libs/data/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/cart/**/*"]
+            "exclude": ["**/node_modules/**", "!libs/data/**/*"]
           }
         },
         "test": {
           "builder": "@nrwl/jest:jest",
           "options": {
-            "jestConfig": "libs/cart/jest.config.js",
-            "tsConfig": "libs/cart/tsconfig.spec.json",
+            "jestConfig": "libs/data/jest.config.js",
+            "tsConfig": "libs/data/tsconfig.spec.json",
             "passWithNoTests": true,
-            "setupFile": "libs/cart/src/test-setup.ts"
+            "setupFile": "libs/data/src/test-setup.ts"
           }
         }
       },

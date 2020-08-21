@@ -27,7 +27,7 @@ export class PetsComponent implements OnInit {
 
   ngOnInit(): void {}
 
-  randomDelay(bottom, top) {
+  private randomDelay(bottom, top) {
     return Math.floor( Math.random() * ( 1 + top - bottom ) ) + bottom;
   }
 

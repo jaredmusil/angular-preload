@@ -1,5 +1,5 @@
 module.exports = {
-  name: 'cart',
+  name: 'data',
   preset: '../../jest.config.js',
   setupFilesAfterEnv: ['<rootDir>/src/test-setup.ts'],
   globals: {
@@ -12,7 +12,7 @@ module.exports = {
       ],
     },
   },
-  coverageDirectory: '../../coverage/libs/cart',
+  coverageDirectory: '../../coverage/libs/data',
   snapshotSerializers: [
     'jest-preset-angular/build/AngularNoNgAttributesSnapshotSerializer.js',
     'jest-preset-angular/build/AngularSnapshotSerializer.js',
