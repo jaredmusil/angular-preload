@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { of, Observable } from 'rxjs';
 import { delay, map } from 'rxjs/operators';
-import { loading } from '@angular-preload/utils'
 
 @Component({
   selector: 'angular-preload-pets',
@@ -10,7 +9,7 @@ import { loading } from '@angular-preload/utils'
 })
 export class PetsComponent implements OnInit {
 
-  @Input() obs$: Observable;
+  @Input() obs$: any;
 
   constructor() { }
 
