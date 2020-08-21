@@ -1,6 +1,6 @@
 # pets
 
-This library was generated with [Nx](https://nx.dev).
+The pets component is simmilar to what a products componet would be in a regular store
 
 ## Running unit tests
 

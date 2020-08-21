@@ -1,0 +1,11 @@
+<div *ngIf="obs$ | loading | async as obs">
+  <ng-template [ngIf]="obs.value">
+    Value: {{ obs.value }}
+  </ng-template>
+  <ng-template [ngIf]="obs.loading">
+    Loading...
+  </ng-template>
+  <ng-template [ngIf]="obs.error">
+    Error: {{ obs.error }}
+  </ng-template>
+</div>

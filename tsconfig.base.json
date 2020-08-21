@@ -17,7 +17,8 @@
     "baseUrl": ".",
     "paths": {
       "@angular-preload/cart": ["libs/cart/src/index.ts"],
-      "@angular-preload/pets": ["libs/pets/src/index.ts"]
+      "@angular-preload/pets": ["libs/pets/src/index.ts"],
+      "@angular-preload/utils": ["libs/utils/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
