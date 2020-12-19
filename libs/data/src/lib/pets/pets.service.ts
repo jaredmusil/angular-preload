@@ -7,7 +7,9 @@ import { Observable } from 'rxjs';
 })
 export class PetsService {
 
-  constructor(private readonly http: HttpClient) { }
+  constructor(
+    private readonly http: HttpClient,
+  ) { }
 
   getDog(id: string): Observable<any> {
     return this.http.get<any[]>(`/api/dogs/${id}`)
@@ -20,7 +22,7 @@ export class PetsService {
   getTurtle(id: string): Observable<any> {
     return this.http.get<any[]>(`/api/turtle/${id}`)
   }
-  
+
   getTurtles(): Observable<any> {
     return this.http.get<any[]>('/api/turtles')
   }

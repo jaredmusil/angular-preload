@@ -21,7 +21,9 @@
               "apps/pet-store/src/favicon.ico",
               "apps/pet-store/src/assets"
             ],
-            "styles": ["apps/pet-store/src/styles.css"],
+            "styles": [
+              "apps/pet-store/src/styles.css"
+            ],
             "scripts": []
           },
           "configurations": {
@@ -79,7 +81,10 @@
               "apps/pet-store/tsconfig.app.json",
               "apps/pet-store/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/pet-store/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/pet-store/**/*"
+            ]
           }
         },
         "test": {
@@ -114,8 +119,13 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": ["apps/pet-store-e2e/tsconfig.e2e.json"],
-            "exclude": ["**/node_modules/**", "!apps/pet-store-e2e/**/*"]
+            "tsConfig": [
+              "apps/pet-store-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/pet-store-e2e/**/*"
+            ]
           }
         }
       }
@@ -133,7 +143,10 @@
               "libs/data/tsconfig.lib.json",
               "libs/data/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/data/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/data/**/*"
+            ]
           }
         },
         "test": {
@@ -161,7 +174,10 @@
               "libs/pets/tsconfig.lib.json",
               "libs/pets/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/pets/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/pets/**/*"
+            ]
           }
         },
         "test": {
@@ -189,7 +205,9 @@
             "outputPath": "dist/apps/api",
             "main": "apps/api/src/main.ts",
             "tsConfig": "apps/api/tsconfig.app.json",
-            "assets": ["apps/api/src/assets"]
+            "assets": [
+              "apps/api/src/assets"
+            ]
           },
           "configurations": {
             "production": {
@@ -218,7 +236,10 @@
               "apps/api/tsconfig.app.json",
               "apps/api/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!apps/api/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/api/**/*"
+            ]
           }
         },
         "test": {
@@ -244,7 +265,10 @@
               "libs/utils/tsconfig.lib.json",
               "libs/utils/tsconfig.spec.json"
             ],
-            "exclude": ["**/node_modules/**", "!libs/utils/**/*"]
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/utils/**/*"
+            ]
           }
         },
         "test": {
@@ -261,7 +285,8 @@
     }
   },
   "cli": {
-    "defaultCollection": "@nrwl/angular"
+    "defaultCollection": "@nrwl/angular",
+    "analytics": "0a87c0f6-e359-4b8d-8e0c-8c6810e8034a"
   },
   "schematics": {
     "@nrwl/workspace": {

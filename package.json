@@ -40,9 +40,10 @@
     "@ngrx/effects": "^10.0.0",
     "@ngrx/store": "^10.0.0",
     "@nrwl/angular": "10.0.13",
+    "express": "4.17.1",
+    "nx": "^11.0.15",
     "rxjs": "~6.5.5",
-    "zone.js": "^0.10.2",
-    "express": "4.17.1"
+    "zone.js": "^0.10.2"
   },
   "devDependencies": {
     "@angular-devkit/build-angular": "~0.1000.0",

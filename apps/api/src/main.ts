@@ -15,13 +15,13 @@ const turtles = [
   { id: '2' , name: 'Raphael'},
   { id: '3' , name: 'Michelangelo'},
   { id: '4' , name: 'Donatello'},
-  { id: '5' , name: 'Ricky Tabby'},
 ];
 
 const cats = [
   { id: '1' , name: 'Snowball'},
   { id: '2' , name: 'Mr. Pickles'},
   { id: '3' , name: 'Jennifurr'},
+  { id: '4' , name: 'Ricky Tabby'},
 ];
 
 app.get('/api', (req, res) => {
@@ -37,11 +37,11 @@ app.get('/api/dogs', (req, res) => {
 });
 
 app.get('/api/cat/:id', (req, res) => {
-  res.send(this.cats[0]);
+  res.send(cats[0]);
 });
 
 app.get('/api/cats', (req, res) => {
-  res.send(this.cats);
+  res.send(cats);
 });
 
 app.get('/api/turtle/:id', (req, res) => {
@@ -49,7 +49,7 @@ app.get('/api/turtle/:id', (req, res) => {
 });
 
 app.get('/api/turtles', (req, res) => {
-  res.send(this.turtles);
+  res.send(turtles);
 });
 
 const port = process.env.port || 3333;
